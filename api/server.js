@@ -9,7 +9,8 @@ server.get('/', (req, res) => {
 })
 
 server.get('/message-of-the-day', (req, res) => {
-    res.send(`<h1>Today's Message </h1><p>${process.env.MOTD || '(no message)'} </p>`)
+    let motd = process.env.MOTD || '(no message)'
+    res.send(`<h1>Today's Message </h1><p>${motd} </p>`)
 })
 
 
